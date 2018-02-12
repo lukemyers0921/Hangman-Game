@@ -33,28 +33,51 @@
     var underscore = [];
     var guessesLeft = 7;
     var guessedLetters = [];
-    
+    var wins = 0;
+    var loses = 0;
+    var progress = counter + 1;
+
+    function isCorrect() {
+        if(underscore.join("") == currentAnimal) {
+            wins++;
+            nextAnimal(); 
+        }
+        else if(guessesLeft < 0) {
+            loses++;
+            nextAnimal();
+        } else {
+
+        }
+
+    }
     function underscoreMaker() {
         for(i = 0; i < currentAnimal.length; i++) {
          underscore.push('_')
         }
     }
     function nextAnimal(){
-        var underscore = [];
-        var guessedLetters = [];
-        var counter = counter + 1; 
-        var guessesLeft = 7;
+        
+        guessedLetters = [];
+        counter++;
+        progress++;
+        currentAnimal = animals[counter].name;
+        underscore = [];
+        underscoreMaker();
+        guessesLeft = 7;
+
     }
     function isGuessCorrect(a) {
         if(guessedLetters.indexOf(a) >= 0) {
         }
         else if(currentAnimal.indexOf(a) !== -1) {
             compareLetters(currentAnimal,a);
+            guessedLetters.push(a);
         } 
         else if(currentAnimal.indexOf(a) < 0){
             guessesLeft = guessesLeft -1;
-        }
             guessedLetters.push(a);
+        }
+            
         
     }
     function compareLetters(x,y){
@@ -90,11 +113,22 @@
             var hangman = "../images/hangman/Defeat.png"
         }
     }
+    window.onload = function what(){
+        document.getElementById('guessesLeft').innerHTML = '7';
+        document.getElementById('wins').innerHTML = '0';
+        document.getElementById('loses').innerHTML = '0';
+        document.getElementById('progress').innerHTML = '1/22';
+        };
     underscoreMaker();
     document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.which).toLowerCase();
     isGuessCorrect(letter);
-    console.log(underscore.toString());
-    console.log(guessedLetters.toString());
-    console.log(guessesLeft);
+    isCorrect();
+    document.getElementById("underscoreH").innerHTML = underscore.join("");
+    document.getElementById("guessedH").innerHTML = guessedLetters.join("");
+    document.getElementById("guessesLeft").innerHTML = guessesLeft;
+    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("loses").innerHTML = loses;
+    console.log(progress);
+    document.getElementById("progress").innerHTML = progress + "/" + animals.length;
     }
