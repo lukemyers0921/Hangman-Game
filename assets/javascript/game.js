@@ -1,34 +1,33 @@
 
     var animals = [ 
-        {name:"owl",image:"../images/animals/owl.png",difficulty: 1},
-        {name:"pig",image: "../images/animals/pig.png",difficulty: 1},
-        {name:"dog",image: "../images/animals/dog.png",difficulty: 1},
-        {name:"cat",image: "../images/animals/cat.png",difficulty: 1},
-        {name:"cow",image: "../images/animals/cow.png",difficulty: 1},
-        {name:"fox",image: "../images/animals/fox.png",difficulty: 1},
-        {name:"duck",image: "../images/animals/duck.png",difficulty: 2},
-        {name:"bear",image: "../images/animals/bear.png",difficulty: 2},
-        {name:"lion",image: "../images/animals/lion.png",difficulty: 2},
-        {name:"bird",image: "../images/animals/bird.png",difficulty: 2},
-        {name:"sheep",image: "../images/animals/sheep.png",difficulty: 2},
-        {name:"horse",image: "../images/animals/horse.png",difficulty: 2},
-        {name:"snake",image: "../images/animals/snake.png",difficulty: 2},
-        {name:"rabbit",image: "../images/animals/rabbit.png",difficulty: 3},
-        {name:"raccoon",image: "../images/animals/raccoon.png",difficulty: 3},
-        {name:"chicken",image: "../images/animals/chicken.png",difficulty: 3},
-        {name:"giraffe",image: "../images/animals/giraffe.png",difficulty: 3},
-        {name:"elephant",image: "../images/animals/elephant.png",difficulty: 4},
-        {name:"reindeer",image: "../images/animals/reindeer.png",difficulty: 4},
-        {name:"hedgehog",image: "../images/animals/hedgehog.png",difficulty: 4},
-        {name:"alligator",image: "../images/animals/alligator.png",difficulty: 4},
-        {name:"hippopotamus",image: "../images/animals/hippo.png",difficulty: 5},
+        {name:"owl",image:"assets/images/animals/owl.png",difficulty: 1},
+        {name:"pig",image: "assets/images/animals/pig.png",difficulty: 1},
+        {name:"dog",image: "assets/images/animals/dog.png",difficulty: 1},
+        {name:"cat",image: "assets/images/animals/cat.png",difficulty: 1},
+        {name:"cow",image: "assets/images/animals/cow.png",difficulty: 1},
+        {name:"fox",image: "assets/images/animals/fox.png",difficulty: 1},
+        {name:"duck",image: "assets/images/animals/duck.png",difficulty: 2},
+        {name:"bear",image: "assets/images/animals/bear.png",difficulty: 2},
+        {name:"lion",image: "assets/images/animals/lion.png",difficulty: 2},
+        {name:"bird",image: "assets/images/animals/bird.png",difficulty: 2},
+        {name:"sheep",image: "assets/images/animals/sheep.png",difficulty: 2},
+        {name:"horse",image: "assets/images/animals/horse.png",difficulty: 2},
+        {name:"snake",image: "assets/images/animals/snake.png",difficulty: 2},
+        {name:"rabbit",image: "assets/images/animals/rabbit.png",difficulty: 3},
+        {name:"raccoon",image: "assets/images/animals/raccoon.png",difficulty: 3},
+        {name:"chicken",image: "assets/images/animals/chicken.png",difficulty: 3},
+        {name:"giraffe",image: "assets/images/animals/giraffe.png",difficulty: 3},
+        {name:"elephant",image: "assets/images/animals/elephant.png",difficulty: 4},
+        {name:"reindeer",image: "assets/images/animals/reindeer.png",difficulty: 4},
+        {name:"hedgehog",image: "assets/images/animals/hedgehog.png",difficulty: 4},
+        {name:"alligator",image: "assets/images/animals/alligator.png",difficulty: 4},
+        {name:"hippopotamus",image: "assets/images/animals/hippo.png",difficulty: 5},
         ];
 
         // current animal, makeUnderscore, compareLetters adds to makeUnderscore or gussedLetters
     
     var counter = 0;
     var currentAnimal = animals[counter].name;
-    var currentImage = animals[counter].image;
     var currentDifficulty = animals[counter].difficulty;
     var underscore = [];
     var guessesLeft = 7;
@@ -36,6 +35,7 @@
     var wins = 0;
     var loses = 0;
     var progress = counter + 1;
+    var picture = counter - 1;
 
     function isCorrect() {
         if(underscore.join("") == currentAnimal) {
@@ -60,10 +60,12 @@
         guessedLetters = [];
         counter++;
         progress++;
+        picture++;
         currentAnimal = animals[counter].name;
         underscore = [];
         underscoreMaker();
         guessesLeft = 7;
+        document.getElementById("lastAnimalGrab").src = animals[picture].image;
 
     }
     function isGuessCorrect(a) {
@@ -89,46 +91,59 @@
 }
     function hangman() {
         if(guessesLeft == 7){
-            var hangman = "../images/hangman/one.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/one.png";
         }
         if(guessesLeft == 6){
-            var hangman = "../images/hangman/two.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/two.png";
         }
         if(guessesLeft == 5){
-            var hangman = "../images/hangman/three.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/three.png";
         }
         if(guessesLeft == 4){
-            var hangman = "../images/hangman/four.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/four.png";
         }
         if(guessesLeft == 3){
-            var hangman = "../images/hangman/five.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/five.png";
         }
         if(guessesLeft == 2){
-            var hangman = "../images/hangman/six.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/six.png";
         }
         if(guessesLeft == 1){
-            var hangman = "../images/hangman/seven.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/seven.png";
         }
         if(guessesLeft == 0){
-            var hangman = "../images/hangman/Defeat.png"
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/eight.png";
         }
+    }
+
+    function updateHTML(){
+        document.getElementById("underscoreH").innerHTML = underscore.join("");
+        document.getElementById("guessedH").innerHTML = guessedLetters.join("");
+        document.getElementById("guessesLeft").innerHTML = guessesLeft;
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("loses").innerHTML = loses;
+        document.getElementById("progress").innerHTML = progress + "/" + animals.length;
+    }
+
+    function sequence(a){
+        isGuessCorrect(a);
+        isCorrect();
+        hangman();
+        updateHTML();
     }
     window.onload = function what(){
         document.getElementById('guessesLeft').innerHTML = '7';
         document.getElementById('wins').innerHTML = '0';
         document.getElementById('loses').innerHTML = '0';
         document.getElementById('progress').innerHTML = '1/22';
+        document.getElementById("hangmanGrab").src = "assets/images/hangman/one.png";
+        document.getElementById("lastAnimalGrab").src = "assets/images/Animals/first.png";
         };
     underscoreMaker();
     document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.which).toLowerCase();
     isGuessCorrect(letter);
     isCorrect();
-    document.getElementById("underscoreH").innerHTML = underscore.join("");
-    document.getElementById("guessedH").innerHTML = guessedLetters.join("");
-    document.getElementById("guessesLeft").innerHTML = guessesLeft;
-    document.getElementById("wins").innerHTML = wins;
-    document.getElementById("loses").innerHTML = loses;
-    console.log(progress);
-    document.getElementById("progress").innerHTML = progress + "/" + animals.length;
+    hangman();
+    updateHTML();
     }

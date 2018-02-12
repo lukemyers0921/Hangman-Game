@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Hangman-Game</title>
     <link rel = "stylesheet" type = "text/css" href ="assets/css/style.css">
     <script src = "assets/javascript/game.js"></script>
 </head>
 <body>
-    <div id = "banner"></div>
-
-    <div id = "animal"></div>
-
-    <div id = "information"></div>
+    <div id = "banner">
+        <img src = "assets/images/title.png">
+    </div>
+    
+    <div id = "hangman">
+        <img src = "assets/images/hangman/one.png" id ="hangmanGrab">
+    </div>
+    <div id = "lastAnimal">
+        <img src = "assets/images/animals/first.png" id ="lastAnimalGrab">
+    </div>
 
     <div id = "underscore">
        <h1 id = "underscoreH">___</h1>
        
     </div>
+    <div id = "alphabet">
+            <span class = "alphabet" onclick="sequence('a')">a</span>
+            <span class = "alphabet" onclick="sequence('b')">b</span>
+            <span class = "alphabet" onclick="sequence('c')">c</span>
+            <span class = "alphabet" onclick="sequence('d')">d</span>
+            <span class = "alphabet" onclick="sequence('e')">e</span>
+            <span class = "alphabet" onclick="sequence('f')">f</span>
+            <span class = "alphabet" onclick="sequence('g')">g</span>
+            <span class = "alphabet" onclick="sequence('h')">h</span>
+            <span class = "alphabet" onclick="sequence('i')">i</span>
+            <span class = "alphabet" onclick="sequence('j')">j</span>
+            <span class = "alphabet" onclick="sequence('k')">k</span>
+            <span class = "alphabet" onclick="sequence('l')">l</span>
+            <span class = "alphabet" onclick="sequence('m')">m</span>
+            <span class = "alphabet" onclick="sequence('n')">n</span>
+            <span class = "alphabet" onclick="sequence('o')">o</span>
+            <span class = "alphabet" onclick="sequence('p')">p</span>
+            <span class = "alphabet" onclick="sequence('q')">q</span>
+            <span class = "alphabet" onclick="sequence('r')">r</span>
+            <span class = "alphabet" onclick="sequence('s')">s</span>
+            <span class = "alphabet" onclick="sequence('t')">t</span>
+            <span class = "alphabet" onclick="sequence('u')">u</span>
+            <span class = "alphabet" onclick="sequence('v')">v</span>
+            <span class = "alphabet" onclick="sequence('w')">w</span>
+            <span class = "alphabet" onclick="sequence('x')">x</span>
+            <span class = "alphabet" onclick="sequence('y')">y</span>
+            <span class = "alphabet" onclick="sequence('z')">z</span>
+        </div>
     <div id = "guessed">
         <span>Guessed Letters:</span><span id = "guessedH"></span>
     </div>
     
-    <div id = "hangman">
+    <div id = "information">
         <span>Guesses Left:</span><span id = "guessesLeft"></span><br>
         <span>Wins:</span><span id = "wins"></span><br>
         <span>Loses:</span><span id = "loses"></span><br>
