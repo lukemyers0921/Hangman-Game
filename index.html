@@ -6,62 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman-Game</title>
     <link rel = "stylesheet" type = "text/css" href ="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src = "assets/javascript/game.js"></script>
 </head>
 <body>
-    <div id = "banner">
-        <img src = "assets/images/title.png">
-    </div>
-    
-    <div id = "hangman">
-        <img src = "assets/images/hangman/one.png" id ="hangmanGrab">
-    </div>
-    <div id = "lastAnimal">
-        <img src = "assets/images/animals/first.png" id ="lastAnimalGrab">
-    </div>
-
-    <div id = "underscore">
-       <h1 id = "underscoreH">___</h1>
-       
-    </div>
-    <div id = "alphabet">
-            <span class = "alphabet" onclick="sequence('a')">a</span>
-            <span class = "alphabet" onclick="sequence('b')">b</span>
-            <span class = "alphabet" onclick="sequence('c')">c</span>
-            <span class = "alphabet" onclick="sequence('d')">d</span>
-            <span class = "alphabet" onclick="sequence('e')">e</span>
-            <span class = "alphabet" onclick="sequence('f')">f</span>
-            <span class = "alphabet" onclick="sequence('g')">g</span>
-            <span class = "alphabet" onclick="sequence('h')">h</span>
-            <span class = "alphabet" onclick="sequence('i')">i</span>
-            <span class = "alphabet" onclick="sequence('j')">j</span>
-            <span class = "alphabet" onclick="sequence('k')">k</span>
-            <span class = "alphabet" onclick="sequence('l')">l</span>
-            <span class = "alphabet" onclick="sequence('m')">m</span>
-            <span class = "alphabet" onclick="sequence('n')">n</span>
-            <span class = "alphabet" onclick="sequence('o')">o</span>
-            <span class = "alphabet" onclick="sequence('p')">p</span>
-            <span class = "alphabet" onclick="sequence('q')">q</span>
-            <span class = "alphabet" onclick="sequence('r')">r</span>
-            <span class = "alphabet" onclick="sequence('s')">s</span>
-            <span class = "alphabet" onclick="sequence('t')">t</span>
-            <span class = "alphabet" onclick="sequence('u')">u</span>
-            <span class = "alphabet" onclick="sequence('v')">v</span>
-            <span class = "alphabet" onclick="sequence('w')">w</span>
-            <span class = "alphabet" onclick="sequence('x')">x</span>
-            <span class = "alphabet" onclick="sequence('y')">y</span>
-            <span class = "alphabet" onclick="sequence('z')">z</span>
+    <div class = "container">
+            <div class = "row" id = "banner">
+                <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img "img-fluid float-left" id = "title" src = "assets/images/title.png" >
+                </div>
         </div>
-    <div id = "guessed">
-        <span>Guessed Letters:</span><span id = "guessedH"></span>
+    <div class = "row">
+        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "hangman">
+            <img class = "img-fluid float-left"src = "assets/images/hangman/one.png" id ="hangmanGrab">
+            </div>
+        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6"id = "lastAnimal">
+                <img class = "img-fluid float-left"src = "assets/images/animals/first.png" id ="lastAnimalGrab">
+            </div>
+        </div>
+    <div class = "row">
+            <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12" id = "underscore">
+            <h1 id = "underscoreH">___</h1> 
+                </div>
+        </div>
+    <div class = "row">
+        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "alphabet">
+            <span id = 'a'class = "alphabet" onclick="sequence('a')">a</span>
+            <span id = 'b'class = "alphabet" onclick="sequence('b')">b</span>
+            <span id = 'c'class = "alphabet" onclick="sequence('c')">c</span>
+            <span id = 'd'class = "alphabet" onclick="sequence('d')">d</span>
+            <span id = 'e'class = "alphabet" onclick="sequence('e')">e</span>
+            <span id = 'f'class = "alphabet" onclick="sequence('f')">f</span>
+            <span id = 'g'class = "alphabet" onclick="sequence('g')">g</span>
+            <span id = 'h'class = "alphabet" onclick="sequence('h')">h</span>
+            <span id = 'i'class = "alphabet" onclick="sequence('i')">i</span>
+            <span id = 'j'class = "alphabet" onclick="sequence('j')">j</span>
+            <span id = 'k'class = "alphabet" onclick="sequence('k')">k</span>
+            <span id = 'l'class = "alphabet" onclick="sequence('l')">l</span>
+            <span id = 'm'class = "alphabet" onclick="sequence('m')">m</span>
+            <span id = 'n'class = "alphabet" onclick="sequence('n')">n</span>
+            <span id = 'o'class = "alphabet" onclick="sequence('o')">o</span>
+            <span id = 'p'class = "alphabet" onclick="sequence('p')">p</span>
+            <span id = 'q'class = "alphabet" onclick="sequence('q')">q</span>
+            <span id = 'r'class = "alphabet" onclick="sequence('r')">r</span>
+            <span id = 's'class = "alphabet" onclick="sequence('s')">s</span>
+            <span id = 't'class = "alphabet" onclick="sequence('t')">t</span>
+            <span id = 'u'class = "alphabet" onclick="sequence('u')">u</span>
+            <span id = 'v'class = "alphabet" onclick="sequence('v')">v</span>
+            <span id = 'w'class = "alphabet" onclick="sequence('w')">w</span>
+            <span id = 'x'class = "alphabet" onclick="sequence('x')">x</span>
+            <span id = 'y'class = "alphabet" onclick="sequence('y')">y</span>
+            <span id = 'z'class = "alphabet" onclick="sequence('z')">z</span>
+        </div>
+        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "information">
+                <span>Guesses Left:</span><span id = "guessesLeft"></span><br>
+                <span>Wins:</span><span id = "wins"></span><br>
+                <span>Loses:</span><span id = "loses"></span><br>
+                <span>Progress:</span><span id = "progress"></span><br>
+            </div>
     </div>
-    
-    <div id = "information">
-        <span>Guesses Left:</span><span id = "guessesLeft"></span><br>
-        <span>Wins:</span><span id = "wins"></span><br>
-        <span>Loses:</span><span id = "loses"></span><br>
-        <span>Progress:</span><span id = "progress"></span><br>
-    </div>
-   
+        </div>
 </body>
 </html>

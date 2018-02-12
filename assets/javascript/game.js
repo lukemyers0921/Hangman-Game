@@ -55,6 +55,13 @@
          underscore.push('_')
         }
     }
+    function alphabetReset(){
+        var x = document.getElementsByClassName("alphabet");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.color = "black";
+}
+    }
     function nextAnimal(){
         
         guessedLetters = [];
@@ -66,6 +73,7 @@
         underscoreMaker();
         guessesLeft = 7;
         document.getElementById("lastAnimalGrab").src = animals[picture].image;
+        alphabetReset();
 
     }
     function isGuessCorrect(a) {
@@ -74,10 +82,12 @@
         else if(currentAnimal.indexOf(a) !== -1) {
             compareLetters(currentAnimal,a);
             guessedLetters.push(a);
+            document.getElementById(a).style.color = "red";
         } 
         else if(currentAnimal.indexOf(a) < 0){
             guessesLeft = guessesLeft -1;
             guessedLetters.push(a);
+            document.getElementById(a).style.color = "red";
         }
             
         
@@ -118,7 +128,6 @@
 
     function updateHTML(){
         document.getElementById("underscoreH").innerHTML = underscore.join("");
-        document.getElementById("guessedH").innerHTML = guessedLetters.join("");
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
         document.getElementById("wins").innerHTML = wins;
         document.getElementById("loses").innerHTML = loses;
