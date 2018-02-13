@@ -12,6 +12,7 @@
         {name:"sheep",image: "assets/images/animals/sheep.png",difficulty: 2},
         {name:"horse",image: "assets/images/animals/horse.png",difficulty: 2},
         {name:"snake",image: "assets/images/animals/snake.png",difficulty: 2},
+        {name:"monkey",image: "assets/images/animals/monkey.png",difficulty: 2},
         {name:"rabbit",image: "assets/images/animals/rabbit.png",difficulty: 3},
         {name:"raccoon",image: "assets/images/animals/raccoon.png",difficulty: 3},
         {name:"chicken",image: "assets/images/animals/chicken.png",difficulty: 3},
@@ -125,7 +126,7 @@
         if(guessesLeft == 0){
             document.getElementById("hangmanGrab").src = "assets/images/hangman/eigth.png";
         }
-        if(counter > 20){
+        if(counter > 21){
             document.getElementById("hangmanGrab").src = "assets/images/hangman/winner.png";
         }
     }
