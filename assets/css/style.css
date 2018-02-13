@@ -1,0 +1,27 @@
+h1 {
+    letter-spacing: .5em;
+    text-align: center;
+}
+body {
+    background-image: url("../images/background.png");
+    background-size:100% auto;
+
+}
+.alphabet {
+    cursor: pointer;
+}
+
+.alphabet {
+    font-size:20px;
+    letter-spacing:.3em;
+}
+
+#title,#title2{
+    max-width:900px;
+    width:100%;
+    height:auto;
+}
+
+/* div {
+    border: 3px solid black;
+} */
