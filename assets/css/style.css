@@ -2,6 +2,7 @@ h1 {
     letter-spacing: .5em;
     text-align: center;
 }
+
 body {
     background-image: url("../images/background.png");
     background-size:100% auto;
@@ -21,3 +22,9 @@ body {
     width:100%;
     height:auto;
 }
+
+@media all and (max-width: 500px) { /* screen size until 500px */
+    h1 {
+        font-size: 24px !important; /* 0.8x default size */
+        }
+    }
