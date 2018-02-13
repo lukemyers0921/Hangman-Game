@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src = "assets/javascript/game.js"></script>
 </head>
-<body>
-    <div class = "container-fluid">
+<body >
+    <div class = "container">
             <div class = "row" id = "banner">
-                <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <img "img-fluid float-left" id = "title" src = "assets/images/title.png" >
+                <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img "img-responsive" id = "title" src = "assets/images/title.png" >
+                </div>
+                <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img "img-responsive" id = "title2" src = "assets/images/title2.png" >
                 </div>
         </div>
     <div class = "row">
@@ -30,7 +33,7 @@
                 </div>
         </div>
     <div class = "row">
-        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "alphabet">
+        <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-6" id = "alphabet">
             <span id = 'a'class = "alphabet" onclick="sequence('a')">a</span>
             <span id = 'b'class = "alphabet" onclick="sequence('b')">b</span>
             <span id = 'c'class = "alphabet" onclick="sequence('c')">c</span>
@@ -58,11 +61,11 @@
             <span id = 'y'class = "alphabet" onclick="sequence('y')">y</span>
             <span id = 'z'class = "alphabet" onclick="sequence('z')">z</span>
         </div>
-        <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "information">
-                <span>Guesses Left:</span><span id = "guessesLeft"></span><br>
-                <span>Wins:</span><span id = "wins"></span><br>
-                <span>Loses:</span><span id = "loses"></span><br>
-                <span>Proress:</span><span id = "progress"></span><br>
+        <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-6" id = "information">
+                <span>Guesses Left:</span><span id = "guessesLeft"></span>
+                <span>&nbsp;Wins:</span><span id = "wins"></span>
+                <span>&nbsp;Loses:</span><span id = "loses"></span>
+                <span>&nbsp;Progress:</span><span id = "progress"></span>
             </div>
     </div>
         </div>

@@ -2,6 +2,11 @@ h1 {
     letter-spacing: .5em;
     text-align: center;
 }
+body {
+    background-image: url("../images/background.png");
+    background-size:100% auto;
+
+}
 .alphabet {
     cursor: pointer;
 }
@@ -11,12 +16,12 @@ h1 {
     letter-spacing:.3em;
 }
 
-#title{
-    max-width:100%;
+#title,#title2{
+    max-width:900px;
     width:100%;
     height:auto;
 }
 
-div {
+/* div {
     border: 3px solid black;
-}
+} */

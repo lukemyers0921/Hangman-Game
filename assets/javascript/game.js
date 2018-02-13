@@ -9,7 +9,6 @@
         {name:"duck",image: "assets/images/animals/duck.png",difficulty: 2},
         {name:"bear",image: "assets/images/animals/bear.png",difficulty: 2},
         {name:"lion",image: "assets/images/animals/lion.png",difficulty: 2},
-        {name:"bird",image: "assets/images/animals/bird.png",difficulty: 2},
         {name:"sheep",image: "assets/images/animals/sheep.png",difficulty: 2},
         {name:"horse",image: "assets/images/animals/horse.png",difficulty: 2},
         {name:"snake",image: "assets/images/animals/snake.png",difficulty: 2},
@@ -122,7 +121,7 @@
             document.getElementById("hangmanGrab").src = "assets/images/hangman/seven.png";
         }
         if(guessesLeft == 0){
-            document.getElementById("hangmanGrab").src = "assets/images/hangman/eight.png";
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/eigth.png";
         }
     }
 
