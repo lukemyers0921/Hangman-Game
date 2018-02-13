@@ -21,6 +21,8 @@
         {name:"hedgehog",image: "assets/images/animals/hedgehog.png",difficulty: 4},
         {name:"alligator",image: "assets/images/animals/alligator.png",difficulty: 4},
         {name:"hippopotamus",image: "assets/images/animals/hippo.png",difficulty: 5},
+        {name:"",image: "assets/images/animals/winner2.png",difficulty: 5},
+        {name:"codebreaks",image: "assets/images/animals/hippo.png",difficulty: 5},
         ];
 
         // current animal, makeUnderscore, compareLetters adds to makeUnderscore or gussedLetters
@@ -122,6 +124,9 @@
         }
         if(guessesLeft == 0){
             document.getElementById("hangmanGrab").src = "assets/images/hangman/eigth.png";
+        }
+        if(counter > 20){
+            document.getElementById("hangmanGrab").src = "assets/images/hangman/winner.png";
         }
     }
 
