@@ -145,7 +145,7 @@
         document.getElementById('loses').innerHTML = '0';
         document.getElementById('progress').innerHTML = '1/22';
         document.getElementById("hangmanGrab").src = "assets/images/hangman/one.png";
-        document.getElementById("lastAnimalGrab").src = "assets/images/Animals/first.png";
+        document.getElementById("lastAnimalGrab").src = "assets/images/animals/first.png";
         };
     underscoreMaker();
     document.onkeyup = function(event) {
